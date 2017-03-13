@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="300dp"
+    android:layout_margin="5dp"
+    android:background="#000"
+    android:padding="5dp">
+
+    <ImageView
+        android:id="@+id/MovieIcon"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ex" />
+
+    <TextView
+        android:id="@+id/MovieTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/MovieIcon"
+        android:fontFamily="sans-serif-condensed"
+        android:maxLines="2"
+        android:text="Jurassic World"
+        android:textColor="#fff"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+    <View
+        android:layout_below="@+id/MovieTitle"
+        android:background="#fff"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+    <TextView
+        android:padding="5dp"
+        android:layout_marginTop="5dp"
+        android:id="@+id/MovieOverView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/MovieTitle"
+        android:text="Dory is reunited with her friends Nemo and Marlin in the search for answers about her past. What can she remember? Who are her parents? And where did she learn to speak Whale?"
+        android:textColor="#fff"
+        android:textStyle="bold" />
+</RelativeLayout>
