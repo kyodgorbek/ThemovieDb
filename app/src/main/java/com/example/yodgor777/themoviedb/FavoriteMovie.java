@@ -4,24 +4,16 @@ package com.example.yodgor777.themoviedb;
  * Created by yodgor777 on 2017-02-08.
  */
 
-import com.orm.SugarRecord;
-import com.orm.dsl.Table;
-import com.orm.dsl.Unique;
-
-@Table
-public class FavoriteMovie extends SugarRecord {
-    @Unique
+public class FavoriteMovie {
     String movieID;
     String movieName;
-
-
 
 
     public FavoriteMovie() {
 
     }
 
-    public FavoriteMovie(String movieID ,String movieName) {
+    public FavoriteMovie(String movieID, String movieName) {
         this.movieID = movieID;
         this.movieName = movieName;
     }

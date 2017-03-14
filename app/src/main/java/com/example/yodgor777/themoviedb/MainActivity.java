@@ -66,8 +66,8 @@ public class MainActivity extends AppCompatActivity {
                 } else if (i == 2) {
 
 
-
-                    List<FavoriteMovie> favoriteMoviesList = FavoriteMovie.listAll(FavoriteMovie.class);
+                    DatabaseHandler handler = new DatabaseHandler(MainActivity.this);
+                    List<FavoriteMovie> favoriteMoviesList = handler.getAllFavouriteMovies();
 
                     for (FavoriteMovie movie : favoriteMoviesList) {
                         Log.i("sddm", "movieId: " + movie.getMovieID());
