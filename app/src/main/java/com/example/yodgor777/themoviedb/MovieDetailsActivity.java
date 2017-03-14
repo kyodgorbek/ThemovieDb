@@ -7,7 +7,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.text.LoginFilter;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -81,17 +80,23 @@ public class MovieDetailsActivity extends AppCompatActivity {
         });
 
 
-
         addToFavoritesBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 ContentValues values = new ContentValues();
-                Log.i("sddm", "onClick: movie id:"+id);
-                Log.i("sddm", "onClick: movie name:"+movieTitle.getText().toString());
+                Log.i("sddm", "onClick: movie id:" + id);
+                Log.i("sddm", "onClick: movie name:" + movieTitle.getText().toString());
+
+                // implement the same old functioning using sqlite
+                DatabaseHandler databaseHandler = new DatabaseHandler(MovieDetailsActivity.this);
+
+                databaseHandler.insertFavMovie(id, movieTitle.getText().toString());
+
+                /*
                 FavoriteMovie favoriteMovie = new FavoriteMovie(id, movieTitle.getText().toString());
                 favoriteMovie.save();
-
-                Toast.makeText(MovieDetailsActivity.this,"Movie added to favorites list", Toast.LENGTH_SHORT).show();
+*/
+                Toast.makeText(MovieDetailsActivity.this, "Movie added to favorites list", Toast.LENGTH_SHORT).show();
             }
         });
     }
